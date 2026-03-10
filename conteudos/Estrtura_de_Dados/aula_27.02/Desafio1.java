@@ -9,7 +9,7 @@ public class Desafio1 {
 
         int somatoria = fatorial;
         for(int i = 0; i <= fatorial; i++) {
-            somatoria = somatoria * (fatorial - 1);
+            somatoria *= (fatorial - 1);
             fatorial = fatorial - 1;
         }
         System.out.println(somatoria);
