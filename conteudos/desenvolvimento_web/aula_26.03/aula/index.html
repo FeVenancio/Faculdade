@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula </title>
+</head>
+<body>
+    <form action="/envio" method="post">
+
+        <p>
+            <label for="Nome">Nome:</label><br>
+            <input type="text" id="Nome" placeholder="Nome:">
+        </p>
+
+        <p>
+            <label for="number">Número:</label><br>
+            <input type="number" id="number" placeholder="Número:">
+        </p>
+
+        <p>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" placeholder="Email:">
+        </p>
+
+        <p>
+            <label for="estado_civil">Genero:</label><br>
+            <input type="radio" id="estado_civil_casado" name="estado_civil" value="Casado">Casado
+            <input type="radio" id="estado_civil_solteiro" name="estado_civil" value="Solteiro">Solteiro
+        </p>
+
+        <p>
+            <label for="discordo">Aceitar os termos</label>
+            <input type="checkbox" id="discordo" checked>
+        </p>
+
+        <p>
+            <label for="concordo">Recusar os termos</label>
+            <input type="checkbox" id="concordo">
+        </p>
+
+        <p>
+            <input type="submit" value="Enviar"><br>
+        </p>
+    </form>
+</body>
+</html>

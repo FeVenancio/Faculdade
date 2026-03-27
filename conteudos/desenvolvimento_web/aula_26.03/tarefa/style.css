@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+nav {
+    margin-left: 700px;
+    margin-bottom: 40px;
+    margin-top: 60px;
+}
+
+#table1 {
+    margin-left: 570px;
+}
+
+td {
+    padding: 3px;
+}
+
+th {
+    padding: 3px;
+}
+
+#footTable {
+    text-align: center;
+}
+
+#table2 {
+    height: (100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#navTable2 {
+    height: 60px;
+}
+
+#mainDicas {
+    margin-left: 630px;
+}
+
+#table3 {
+    padding: 20px 80px;
+    height: calc(100vh - 120px);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#navTable3 {
+    height: 20px;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+</head>
+<body>
+    <h1>Contato</h1>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Página Principal</a></li>
+        </ul>
+    </nav>
+    <main>
+        <form action="#" method="post">
+
+            <p>
+                <fieldset>
+                    <legend>Informações Pessoais</legend>
+                    <p>
+                        <label for="user_name">Nome:</label>
+                        <input type="text" id="user_name" name="name" pattern="[A-Za-zÀ-ÿ\s]{3,}" title="Apenas letras e no mínimo 3 caracteres" placeholder="Nome Completo" required>
+                    </p>
+                    <p>
+                        <label for="user_email">Email:</label>
+                        <input type="email" id="user_email" name="email" placeholder="nome@exemplo.com" required>
+                    </p>
+                </fieldset>
+            </p>
+
+            <p>
+                <fieldset>
+                    <legend>Mensagem do Usuário</legend>
+                    <p>
+                        <textarea name="message" id="userMessage" placeholder="Digite sua mensagem..." maxlength="200" required></textarea>
+                    </p>
+                </fieldset>
+            </p>
+
+            <p>
+                <fieldset>
+                    <legend>Outras informações</legend>
+                    <p>
+                        <label for="motivo_contato">Motivo do Contato:</label>
+                        <select name="motivo_contato" id="motivo_contato">
+                            <option value="duvida">Dúvida</option>
+                            <option value="suporte">Suporte técnico</option>
+                            <option value="reclamacao">Reclamação</option>
+                            <option value="sugestao">Sugestão</option>
+                        </select>
+                    </p>
+
+                    
+                    <label>Tipo de Usuário:</label><br>
+
+                    <p>
+                        <label><input type="radio" name="user_type" value="administrador">Administrador</label><br>
+
+                        <label><input type="radio" name="user_type" value="usuario">usuario</label><br>
+
+                        <label><input type="radio" name="user_type" value="visitante">visitante</label><br>
+
+                        <label><input type="radio" name="user_type" value="moderador">Moderador</label><br>
+                    </p>
+
+                    
+                    <label>Termos:</label><br>
+                    
+                    <p>
+                        <label><input type="checkbox" name="termos" value="politica_privacidade">Li e concordo com os termos de uso e política de privacidade</label><br>
+
+                        <label><input type="checkbox" name="termos" value="condicoes_site">Declaro que li e aceito os termos e condições do site</label><br>
+
+                        <label><input type="checkbox" name="termos" value="tratamento_dados">Concordo com os termos de uso e com o tratamento dos meus dados</label><br>
+                    </p>
+                    
+                </fieldset>
+            </p>
+
+            <input type="submit" value="enviar">
+
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas Links e Tabelas</title>
+</head>
+<body style="margin-left: 620px;">
+    <ul> <!-- Listas não ordenadas -->
+        <li>Unordered list</li> <!-- Itens da lista -->
+        <li>Lista nao ordenada</li>
+    </ul>
+
+    <ol> <!-- Listas ordenadas -->
+        <li>Ordened list</li> <!-- Itens da lista -->
+        <li>Lista ordenada</li>
+    </ol>
+
+    <dl> <!-- Lista de Termo + Descrição -->
+        <dt>HTML</dt> <!-- Termo -->
+        <dd>Linguagem de marcação para estruturar páginas web</dd> <!-- Descrição -->
+
+        <dt>CSS</dt>
+        <dd>Linguagem para estilização visual</dd>
+    </dl>
+
+    <ol> <!-- Lista enumerada com lista de Termo e Descrição -->
+        <dl> 
+            <li>
+                <dt>HTML</dt> 
+                <dd>Linguagem de marcação para estruturar páginas web</dd> 
+            </li>
+            <li>
+                <dt>CSS</dt>
+                <dd>Linguagem para estilização visual</dd>
+            </li>
+        </dl>
+    </ol>
+
+    <nav style="margin-bottom: 50px;"> <!-- Navegação -->
+        <a href="#contato"></a> <!-- Link -->
+                <!-- # Link para a própria página -->
+    </nav>
+    <section>
+        <table border="2">
+            <caption>Grade de aulas</caption>
+            <thead>
+                <tr>
+                    <td>Materia</td>
+                    <td>Dia</td>
+                    <td>Horário</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Desenvolvimento web</td>
+                    <td>quinta-feira</td>
+                    <td>19:00 às 22:40</td>
+                </tr>
+                <tr>
+                    <td>Estrtura de dados</td>
+                    <td>sexta-feira</td>
+                    <td>19:00 às 22:40</td>
+                </tr>
+                <tr>
+                    <td>Estatísticas</td>
+                    <td>segunda-feira</td>
+                    <td>19:00 às 22:40</td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <td colspan="3" style="text-align: center;">Informações da tabela</td>
+            </tfoot>
+        </table>
+    </section>
+</body>
+</html>
