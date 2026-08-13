@@ -32,6 +32,14 @@ public class Main {
         LinkedList listaAlunos3 = listaAlunos.juntar(listaAlunos, listaAlunos2);
         listaAlunos3.print();
 
+        System.out.println("Trocar alunos de lugar");
+        listaAlunos3.trocar(aluno5, aluno2);
+        listaAlunos3.print();
+        
+        System.out.println("Pegar por posição");
+        Alunos retorno = listaAlunos3.get(2);
+        System.out.println(retorno.getNome());
+
         scn.close();
     }
 }

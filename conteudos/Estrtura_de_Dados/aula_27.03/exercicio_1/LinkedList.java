@@ -1,6 +1,6 @@
 public class LinkedList {
     Node head = null;
-
+    // adcionar elementos na lista
     public void add(Alunos aluno) {
 
         Node node = new Node(aluno);
@@ -8,7 +8,7 @@ public class LinkedList {
         node.next = head;
         head = node;
     }
-
+    // printar todos os elementos da lista
     public void print() {
 
         Node node = new Node();
@@ -19,7 +19,7 @@ public class LinkedList {
             node = node.next;
         }
     }
-
+    // pegar elemento por índice 
     public Alunos get(int posicao) {
 
         Node node = new Node();
@@ -32,7 +32,7 @@ public class LinkedList {
         }
         return node.aluno;
     }
-
+    // juntar duas listas
     public LinkedList juntar(LinkedList lista01, LinkedList lista02) {
         
         LinkedList lista03 = new LinkedList();
@@ -51,6 +51,30 @@ public class LinkedList {
             node2 = node2.next;
         }
         return lista03;
+    }
+    // trocar dois alunos de lugar
+    public void trocar(Alunos al1, Alunos al2) {
+
+        Node node = head;
+
+        while (node != null) {
+
+            if (al1.equals(node.aluno)) {
+                
+                Node node2 = head;
+
+                while (node2 != null) {
+
+                    if (al2.equals(node2.aluno)) {
+                        node.aluno = al2;
+                        node2.aluno = al1;
+                        return;
+                    }
+                    node2 = node2.next;
+                }
+            }
+            node = node.next;
+        }
     }
         
 }

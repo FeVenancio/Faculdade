@@ -1,0 +1,52 @@
+/* AC2 - style.css (CORRIGIDO) */
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  background: #ffffff;
+}
+
+/* Corrigido: era .topo, mas o elemento é #topo */
+#topo {
+  background-color: #0d6efd;
+  color: white;
+}
+
+/* Só links do menu (seletor hierárquico correto) */
+#menu-lista .menu-link {
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#menu-lista .menu-link:hover {
+  text-decoration: underline;
+}
+
+/* Evita “quebrar” outros links do site */
+a:not(#menu-lista .menu-link) {
+  color: #0d6efd;
+}
+
+/* Box model do conteúdo */
+#conteudo {
+  padding: 12px;
+  margin: 0 auto;
+}
+
+/* Corrigido: radius não existe, é border-radius */
+.card-palestra {
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+}
+
+/* Classe usada pelo JS: efeito evidente */
+.selecionado {
+  background-color: #e7f1ff;
+  border-left: 6px solid #0d6efd;
+}
+
+/* Corrigido: seletor precisa do ponto */
+.is-invalid {
+  border-width: 2px;
+}

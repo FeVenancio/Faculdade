@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portal Tech Conference</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style_base.css">
+</head>
+<body>
+
+  <header id="topo" class="py-3">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between gap-3">
+        <div>
+          <h1 id="titulo-site" class="m-0">Portal Tech Conference</h1>
+          <p class="m-0" id="subtitulo">Edição prática: Bootstrap + JS + DOM</p>
+        </div>
+
+        <nav id="menu">
+          <ul id="menu-lista" class="m-0 p-0 d-flex gap-3">
+            <li class="menu-item"><a class="menu-link" href="#inscricao">Inscrição</a></li>
+            <li class="menu-item"><a class="menu-link" href="#programacao">Programação</a></li>
+            <li class="menu-item"><a class="menu-link" href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" class="container my-4">
+
+    <div id="msg-global" class="alert d-none" role="alert"></div>
+
+    <section id="programacao" class="mb-4">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+        <h2 class="m-0">Programação</h2>
+        <small class="text-muted">Cards com modal de detalhes</small>
+      </div>
+
+      <div class="row g-3" id="linha-cards">
+
+        <!-- AJUSTE #1 corrigido: col-lg-4 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 card-palestra" data-palestra="A">
+            <div class="card-body">
+              <h3 class="card-title h5">Palestra A</h3>
+              <p class="card-text">Bootstrap grid no mundo real.</p>
+              <button class="btn btn-primary btn-detalhes" type="button" data-palestra="A">Detalhes</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- AJUSTE #2 corrigido: col-lg-4 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 card-palestra" data-palestra="B">
+            <div class="card-body">
+              <h3 class="card-title h5">Palestra B</h3>
+              <p class="card-text">DOM, eventos e manipulação de classes.</p>
+              <button class="btn btn-primary btn-detalhes" type="button" data-palestra="B">Detalhes</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- AJUSTE #3 corrigido: col-lg-4 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 card-palestra" data-palestra="C">
+            <div class="card-body">
+              <h3 class="card-title h5">Palestra C</h3>
+              <p class="card-text">Validação manual sem HTML5 validation.</p>
+              <button class="btn btn-primary btn-detalhes" type="button" data-palestra="C">Detalhes</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="inscricao" class="mb-4">
+      <h2 class="mb-3">Inscrição</h2>
+
+      <form id="form-inscricao" novalidate>
+        <div class="row g-3">
+
+          <div class="col-12 col-md-6">
+            <label class="form-label" for="nome">Nome completo</label>
+            <input class="form-control" id="nome" name="nome" type="text" placeholder="Ex.: Ana Maria">
+            <div id="err-nome" class="invalid-feedback"></div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="form-label" for="email">E-mail</label>
+            <input class="form-control" id="email" name="email" type="text" placeholder="exemplo@dominio.com">
+            <div id="err-email" class="invalid-feedback"></div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <label class="form-label" for="telefone">Telefone</label>
+            <input class="form-control" id="telefone" name="telefone" type="text" placeholder="(11) 98765-4321">
+            <div id="err-telefone" class="invalid-feedback"></div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <label class="form-label" for="dataInicio">Data início</label>
+            <input class="form-control" id="dataInicio" name="dataInicio" type="text" placeholder="AAAA-MM-DD">
+            <div id="err-dataInicio" class="invalid-feedback"></div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <label class="form-label" for="dataFim">Data fim</label>
+            <input class="form-control" id="dataFim" name="dataFim" type="text" placeholder="AAAA-MM-DD">
+            <div id="err-dataFim" class="invalid-feedback"></div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="form-label" for="tema">Tema (select obrigatório)</label>
+            <select class="form-select" id="tema" name="tema">
+              <option value="">Selecione...</option>
+              <option value="bootstrap">Bootstrap</option>
+              <option value="dom">DOM e Eventos</option>
+              <option value="validacao">Validação</option>
+            </select>
+            <div id="err-tema" class="invalid-feedback"></div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="form-label" for="obs">Observação (campo texto obrigatório)</label>
+            <input class="form-control" id="obs" name="obs" type="text" placeholder="Ex.: Quero foco em exemplos práticos">
+            <div id="err-obs" class="invalid-feedback"></div>
+          </div>
+
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" id="termos" name="termos" type="checkbox" checked>
+              <label class="form-check-label" for="termos">Aceito os termos</label>
+              <div id="err-termos" class="invalid-feedback"></div>
+            </div>
+          </div>
+
+          <div class="col-12 d-flex gap-2">
+            <button id="btn-enviar" class="btn btn-success" type="submit">Enviar</button>
+            <button id="btn-limpar" class="btn btn-secondary" type="button">Limpar</button>
+          </div>
+
+        </div>
+      </form>
+    </section>
+
+    <section id="faq" class="mb-4">
+      <h2 class="mb-3">FAQ</h2>
+
+      <div class="d-flex flex-wrap gap-2 mb-2">
+        <button id="btn-add-item" class="btn btn-outline-primary" type="button">Adicionar item</button>
+        <button id="btn-remover-ultimo" class="btn btn-outline-danger" type="button">Remover último</button>
+      </div>
+
+      <ul id="lista-faq" class="list-group">
+        <li class="list-group-item" data-id="1">O evento é gratuito?</li>
+        <li class="list-group-item" data-id="2">Vai ter certificado?</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer id="rodape" class="py-3">
+    <div class="container">
+      <small>Conteúdo fictício para fins educacionais</small>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="modalDetalhes" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 id="modal-titulo" class="modal-title">Detalhes</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+
+        <div id="modal-corpo" class="modal-body">...</div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
