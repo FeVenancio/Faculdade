@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+    <script>
+        function mudarCor(cor) {
+
+            document.body.style.backgroundColor = cor;
+        }
+    </script>
+</head>
+<body>
+    <ul>
+        <li>cor</li>
+        <li>
+            <input type="radio" name="cor" value="preto" oninput="mudarCor('black')">
+            Preto
+        </li>
+        <li>
+            <input type="radio" name="cor" value="azul" oninput="mudarCor('blue')">
+            Azul
+        </li>
+        <li>
+            <input type="radio" name="cor" value="vermelho" oninput="mudarCor('red')">
+            Vermelho
+        </li>
+        <li>
+            <input type="radio" name="cor" value="Branco" oninput="mudarCor('white')">
+            Branco
+        </li>
+    </ul>
+</body>
+</html>

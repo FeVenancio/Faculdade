@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+    <script>
+        var cont = 0;
+        function preview(elemento) {
+
+            if(elemento.checked)
+                cont++;
+            else
+                cont--;
+
+            if(cont == 2) {
+                document.getElementById("button-form").disabled = false;
+            } else {
+                document.getElementById("button-form").disabled = true;
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <form action="" method="post">
+        <ul>
+        <li>Qual vai ser a final da Libertadores ?</li>
+        <li>
+            <input onclick="preview(this)" type="checkbox" name="Corinthians">
+            Corinthians
+        </li>
+        <li>
+            <input onclick="preview(this)" type="checkbox" name="Flamengo">
+            Flamengo
+        </li>
+        <li>
+            <input onclick="preview(this)" type="checkbox" name="Fluminense">
+            Fluminense
+        </li>
+        <li>
+            <input onclick="preview(this)" type="checkbox" name="Palmeiras">
+            Palmeiras
+        </li>
+        </ul>
+        <button disabled id="button-form">Enviar formulário</button>
+    </form>
+</body>
+</html>
