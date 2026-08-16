@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+<body>
+    <form action="" method="post" oninput="validarFormulario(); Reset()" onreset="setTimeout(() => { habilitacaoCampo(); validarFormulario(); habilitarReset(); }, 0)">
+        <h1>Formulário</h1>
+
+        <fieldset>
+            <legend>Dados Pessoais:</legend>
+
+            <p>
+                <label for="full-name-cliente">Nome:</label>
+                <input type="text" name="name" id="full-name-cliente">
+            </p>
+
+            <p>
+                <label>Pessoa (Física ou Jurídica):</label>
+                <br>
+                <input type="radio" name="tipo-pessoa" value="fisica" id="pessoa-fisica" onchange="habilitacaoCampo(); validarFormulario(); habilitarReset()">
+                <label for="pessoa-fisica">Física</label>
+                <br>
+                <input type="radio" name="tipo-pessoa" value="juridica" id="pessoa-juridica" onchange="habilitacaoCampo(); validarFormulario(); habilitarReset()">
+                <label for="pessoa-juridica">Juridica</label>
+            </p>
+
+            <p>
+                <label for="cpf-cliente">CPF:</label>
+                <input type="text" name="cpf" id="cpf-cliente" disabled>
+            </p>
+
+            <p>
+                <label for="cnpj-cliente">CNPJ:</label>
+                <input type="text" name="cnpj" id="cnpj-cliente" disabled>
+            </p>
+
+            <p>
+                <label for="data-nascimento-cliente">Data de nascimento:</label>
+                <input type="date" name="data" id="data-nascimento-cliente" disabled>
+            </p>
+
+            <p>
+                <label for="endereco-cliente">Endereço:</label>
+                <input type="text" name="endereco" id="endereco-cliente">
+            </p>
+
+            <p>
+                <label for="cep-cliente">CEP:</label>
+                <input type="text" name="cep" id="cep-cliente" oninput="validacaoCep(this)">
+            </p>
+
+            <p>
+                <label for="telefone-cliente">Telefone:</label>
+                <input type="text" name="telefone" id="telefone-cliente">
+            </p>
+
+            <p>
+                <label for="email-cliente">Email:</label>
+                <input type="email" name="email" id="email-cliente">
+            </p>
+
+            <p>
+                <button type="submit" id="button-submit" disabled>Enviar Formulário</button>
+
+                <button type="reset" id="button-reset" disabled>limpar</button>
+            </p>
+            <p id="message-error"></p>
+        </fieldset>
+    </form>
+
+    <script>
+            let nomeCliente = document.getElementById('full-name-cliente');
+            let pessoaFisica = document.getElementById('pessoa-fisica');
+            let pessoaJuridica = document.getElementById('pessoa-juridica');
+            let cpf = document.getElementById('cpf-cliente');
+            let cnpj = document.getElementById('cnpj-cliente');
+            let dataNascimento = document.getElementById('data-nascimento-cliente');
+            let endereco = document.getElementById('endereco-cliente');
+            let cep = document.getElementById('cep-cliente');
+            let telefone = document.getElementById('telefone-cliente');
+            let email = document.getElementById('email-cliente');
+            let buttonSubmit = document.getElementById('button-submit');
+            let messageError = document.getElementById('message-error');
+            let buttonReset = document.getElementById('button-reset');
+
+            function habilitacaoCampo() {
+
+                if(pessoaFisica.checked) {
+                    cpf.disabled = false;
+                    dataNascimento.disabled = false;
+                    cnpj.disabled = true;
+                } else if(pessoaJuridica.checked) {
+                    cnpj.disabled = false;
+                    cpf.disabled = true;
+                    dataNascimento.disabled = true;
+                } else {
+                    cnpj.disabled = true;
+                    cpf.disabled = true;
+                    dataNascimento.disabled = true;
+                }
+            }
+
+            function validacaoCep(element) {
+
+                if(element.value.match(/^[0-9]+$/) && element.value.length >= 5)
+                    return true;
+                else 
+                    return false;
+            }
+
+            function validarFormulario() {
+
+                if (nomeCliente.value.length > 2 && 
+                (pessoaFisica.checked || pessoaJuridica.checked) && 
+                ((cpf.value.length >= 8 && dataNascimento.value) || cnpj.value.length >= 8) && 
+                endereco.value.length >= 3 && 
+                validacaoCep(cep) && 
+                telefone.value.length >= 8 && 
+                email.value.length >= 5) {
+
+                    buttonSubmit.disabled = false;
+                    messageError.innerHTML = '';
+
+                } else {
+
+                    buttonSubmit.disabled = true;
+                    messageError.innerHTML = 'Preencha todos os campos';
+                }
+            }
+
+            function habilitarReset() {
+
+                if(nomeCliente.value || 
+                (pessoaFisica.checked || pessoaJuridica.checked) || 
+                ((cpf.value || dataNascimento.value) || cnpj.value) || 
+                endereco.value || 
+                cep.value || 
+                telefone.value || 
+                email.value)
+                    buttonReset.disabled = false;
+                else 
+                    buttonReset.disabled = true;
+            }
+        </script>
+</body>
+</html>
