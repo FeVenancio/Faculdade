@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6 e 7 e 8</title>
+    <script>
+        function mudarCorTexto(color) {
+            var e = document.getElementById('main-text');
+            e.style.color = color; 
+        }
+
+        function mudarCorFundo(color) {
+            document.body.style.backgroundColor = color;
+        }
+
+        let tamanho = 16;
+
+        function aumentarFonte() {
+            tamanho += 1;
+            document.getElementById('main-text').style.fontSize = tamanho + 'px';
+        }
+
+        function diminuirFonte() {
+            tamanho -= 1;
+            document.getElementById('main-text').style.fontSize = tamanho + 'px';
+        }
+
+        function maiusculo() {
+            let e = document.getElementById('main-text');
+            e.innerText = e.innerText.toUpperCase();
+        }
+
+        function minusculo() {
+            let e = document.getElementById('main-text');
+            e.innerText = e.innerText.toLowerCase();
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Frase:</h1>
+        <p id='main-text'>
+            Faculdade de Engenharia de Sorocaba
+        </p>
+    </div>
+
+    <div id='text-color'>
+        <h2>Cor do texto</h2>
+        <button onclick="mudarCorTexto('white')">Branco</button>
+        <button onclick="mudarCorTexto('black')">Preto</button>
+    </div>
+
+    <div id='bgc-color'>
+        <h2>Cor do fundo</h2>
+        <button onclick="mudarCorFundo('blue')">Azul</button>
+        <button onclick="mudarCorFundo('red')">Vermelho</button>
+    </div>
+
+    <div>
+        <h2>Tamanho da fonte</h2>
+        <button onclick="aumentarFonte()">Aumentar</button>
+        <button onclick="diminuirFonte()">Diminuir</button>
+    </div>
+
+    <div>
+        <h2>Maiúsculo e Minúsculo</h2>
+        <button onclick="maiusculo()">Maiúsculo</button>
+        <button onclick="minusculo()">Minúsculo</button>
+    </div>
+</body>
+</html>

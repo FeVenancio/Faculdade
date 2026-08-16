@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 9</title>
+    
+</head>
+<body>
+    <form>
+
+    <fieldset>
+
+        <legend>Cadastro:</legend>
+
+        <p>
+            <label for="">Login:</label>
+            <input type="email" id="login" oninput="cadastrar()">
+            <br>
+        </p>
+
+        <p>
+            <label for="">Senha:</label>
+            <input type="password" id="password" oninput="cadastrar()">
+            <br>
+        </p>
+
+        <p>
+            <label for="">Confirmar senha:</label>
+            <input type="password" id="confirm-password" oninput="cadastrar()">
+            <br>
+        </p>
+
+        <button type="submit" disabled id="button">Enviar</button>
+        <button type="reset">Limpar</button>
+    </fieldset>
+
+    </form>
+
+    <script>
+
+        let login = document.getElementById('login');
+        let password = document.getElementById('password');
+        let confirmPassword = document.getElementById('confirm-password');
+        let button = document.getElementById('button');
+
+        function cadastrar() {
+
+            if(login.value.length >= 6 && password.value === confirmPassword.value && password.value.length >= 6)
+
+                button.disabled = false;
+            else 
+                button.disabled = true;
+        }
+    </script>
+
+    
+</body>
+</html>
