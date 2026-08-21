@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+</head>
+<body>
+    <h1>Exercicío 3</h1>
+
+    <main>
+        <div id="elemento">
+            <p>Me segue</p>
+        </div>
+    </main>
+    <style>
+        #elemento {
+            position: fixed;
+            width: 100px;
+            height: 50px;
+            background-color: red;
+        }
+    </style>
+
+    <script>
+        let elemento = document.getElementById('elemento');
+
+        document.addEventListener("mousemove", function(event) {
+
+            elemento.style.left = event.clientX + "px";
+            elemento.style.top = event.clientY + "px";
+
+        });
+    </script>
+</body>
+</html>

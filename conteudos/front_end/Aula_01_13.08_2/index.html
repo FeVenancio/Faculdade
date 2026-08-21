@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+<body>
+    <header>
+        <h1>Exercício 1</h1>
+    </header>
+    <main>
+        <button id="button-main" onclick="button()">clique aqui</button>
+        <p id="qty-click"></p>
+        <p id="hide-message"></p>
+    </main>
+    <script>
+        let buttonMain = document.getElementById('button-main');
+        let hideMessage = document.getElementById('hide-message');
+        let qtyClick = document.getElementById('qty-click');
+        let contador = 0;
+
+        function button() {
+
+            contador += 1;
+
+            qtyClick.innerHTML = contador;
+
+            if (contador >= 10) {
+                hideMessage.innerText = 'Chega né ?';
+            }
+        }
+    </script>
+</body>
+</html>

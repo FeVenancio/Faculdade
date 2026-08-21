@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+<body>
+    <header>
+        <h1>Exercício 4</h1>
+    </header>
+    <main>
+        <div>
+
+            <label for="tarefa">Digite uma tarefa:</label>
+            <input type="text" name="tarefa" id="tarefa">
+            <button id="main-button" onclick="adicionarListaTarefas()">adicionar</button>
+
+        </div>
+
+        <div id="lista-tarefas">
+
+        </div>
+    </main>
+    <script>
+
+        let tarefa = document.getElementById('tarefa');
+        let listaTarefas = document.getElementById('lista-tarefas');
+
+        function adicionarListaTarefas() {
+            
+            listaTarefas.innerHTML += '<p>' + tarefa.value + '</p>';
+        }
+    </script>
+</body>
+</html>
