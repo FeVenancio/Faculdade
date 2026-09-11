@@ -1,0 +1,33 @@
+<h1>mural-recados</h1>
+
+@for (recados of listaRecados; track $index) {
+  <p class="recado" (click)="selecionado = recados">Recado: {{recados}}</p>
+}
+
+@if (selecionado) {
+  <p id="cor">Recado selecionado: {{selecionado}}</p>
+}
+@else {
+    <p>Nenhum recado selecionado.</p>
+}
+
+
+<input type="text" [(ngModel)]="novoRecado" placeholder="Digite um novo recado" (keydown.enter)="adicionarRecado()"> 
+
+@if (novoRecado) {
+    <button id="botao" (click)="adicionarRecado()">Publicar</button>
+}
+@else {
+    
+}
+
+<button (click)="recadoVerificado = !recadoVerificado" (click)="verificar()">{{ verificacao }}</button>
+@if (recadoVerificado) {
+  <p>Lido!</p>
+}
+@else {
+  <p>Não lido!</p>
+}
+
+<button (click)="contador = contador + 1">Curtir</button>
+<p>Quantidade de curtidas: {{contador}}</p>

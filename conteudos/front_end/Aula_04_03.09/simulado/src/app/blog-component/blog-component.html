@@ -1,0 +1,25 @@
+<p>blog-component works!</p>
+
+@for (post of posts; track $index) {
+  <div class="post">
+    <h2>{{ post.titulo }}</h2>
+
+    <p>Autor: {{ post.autor }}</p>
+
+    <p>Data de Publicação: {{ post.dataPublicacao }}</p>
+
+    <p>{{ post.conteudo }}</p>
+
+    <p>Número de Curtidas: {{ post.numeroCurtida }}</p>
+
+    <p>Comentários:</p>
+
+    <ul>
+      <li>{{ post.listaComentarios[0] }}</li>
+    </ul>
+    <input type="text" [(ngModel)]="post.listaComentarios[0]" placeholder="Digite seu comentário">
+    <button (click)="comentar()">Comentar</button>
+    <button (click)="curtir($index)">Curtir</button>
+  </div>
+
+}

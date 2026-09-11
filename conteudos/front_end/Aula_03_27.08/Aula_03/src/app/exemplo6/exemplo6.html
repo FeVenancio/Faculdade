@@ -1,0 +1,11 @@
+<p>exemplo6 works!</p>
+
+<ul>
+    @for (item of frutas; track $index) {
+        <li (click)="selecionada = item">{{item}}</li>
+    }
+</ul>
+
+@if (selecionada) {
+    <p>Você digitou: {{selecionada}}</p>
+}
