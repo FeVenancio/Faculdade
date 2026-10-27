@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#form-register {
+    background-color: rgb(169, 166, 166);
+    border-radius: 15px;
+    margin: auto;
+    width: 500px;
+    height: 500px;
+}
+
+#forms {
+    margin: auto;
+}
+
+#title-register {
+    margin: auto;
+}
+
+#register-button {
+    color: white;
+    background-color: #25c54d;
+    border-color: #239b43;
+    border-radius: 5px;
+    box-shadow: 2px;
+}
+
+label {
+    margin: 5px;
+}
+
+input {
+    background-color: white;
+    border: 50px;
+    border-color: white;
+}

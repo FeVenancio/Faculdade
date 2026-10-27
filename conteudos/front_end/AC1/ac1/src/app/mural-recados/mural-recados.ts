@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class MuralRecados {
 
-  listaRecados: string[] = ['Proibido celular na resenha', 'proibido fiel', 'proibido gestante', 'proibido trair'];
+  listaRecados: string[] = ['Ligue depois', 'Estou ocupado', 'Celular descarregado', 'Estou reunião'];
   selecionado: string = '';
   novoRecado: string = '';
   recadoVerificado: boolean = false;

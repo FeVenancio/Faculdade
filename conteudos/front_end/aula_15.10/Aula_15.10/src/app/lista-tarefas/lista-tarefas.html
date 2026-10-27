@@ -1,0 +1,42 @@
+<h1>Lista de Tarefas</h1>
+
+<div class="contador">
+  <p>Total de tarefas: {{ tarefas.length }}</p>
+  <p>Concluídas: {{ contarConcluidas() }}</p>
+  <p>Pendentes: {{ contarPendentes() }}</p>
+</div>
+
+<p *ngIf="tarefas.length === 0">
+  Nenhuma tarefa cadastrada
+</p>
+
+<div *ngFor="let tarefa of tarefas" class="tarefa">
+
+  <h3 [class.concluida]="tarefa.dataConclusao !== null">
+    {{ tarefa.titulo }}
+  </h3>
+
+  <p [class.concluida]="tarefa.dataConclusao !== null">
+    {{ tarefa.descricao }}
+  </p>
+
+  <p>
+    Prazo: {{ tarefa.prazoConclusao | date:'dd/MM/yyyy' }}
+  </p>
+
+  <p *ngIf="tarefa.dataConclusao !== null">
+    Concluída em: {{ tarefa.dataConclusao | date:'dd/MM/yyyy HH:mm' }}
+  </p>
+
+  <button type="button" (click)="marcarConcluida(tarefa)" [disabled]="tarefa.dataConclusao !== null" class="btn-concluir">
+    Concluir
+  </button>
+
+  <button type="button" (click)="removerTarefa(tarefa)" class="btn-remover">
+    Remover
+  </button>
+
+  <hr>
+</div>
+
+<a routerLink="/cadastrar">Voltar ao cadastro</a>

@@ -1,0 +1,9 @@
+@for (c of carrinho; track c.id) {
+    <h1>{{ c.nome }}</h1>
+    <p>preço: {{ c.preco }}</p>
+    <p>quanitdade: {{ c.quantidade }}</p>
+    <p>vencimento: {{ c.vencimento }}</p>
+    <p>total: {{ c.quantidade * c.preco }}</p>
+} @empty {
+    <p>Nenhum produto no carrinho</p>
+}

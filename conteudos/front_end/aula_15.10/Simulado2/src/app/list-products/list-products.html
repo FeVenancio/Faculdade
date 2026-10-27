@@ -1,0 +1,23 @@
+<div id="quantity-products">
+    <p>Total of products: {{ products().length }}</p>
+    <p>Available products: {{ availableProducts() }}</p>
+    <p>Unavailable products: {{ unavailableProducts() }}</p>
+</div>
+
+<body id="body-list">
+    @if (products().length === 0) {
+        <p>No products registered</p>
+    } @else {
+        @for (p of products(); track p.id) {
+            <p>Product name: {{ p.name }}</p>
+            <p>Product price: {{ p.price }}</p>
+            <p>Product Id: {{ p.id }}</p>
+            <button id="remove-button" (click)="remove(p)">Remove</button>
+            <button id="change-availability-button" (click)="changeAvailability(p)">{{ p.available ? 'Available' : 'unavailable' }}</button>
+        }
+    }
+</body>
+
+<nav>
+    <button id="back-register-button"><a routerLink="/register">Register</a></button>
+</nav>

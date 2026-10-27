@@ -1,0 +1,21 @@
+<body>
+    <form (ngSubmit)="add()" id="form-register">
+    
+        <div id="forms">
+            <h1 id="title-register">Product Register</h1>
+            <p>
+                <label for="name" class="label">Product name:</label>
+                <input type="text" name="name" id="name" placeholder="enter the product name" [(ngModel)]="nameProduct" required>
+            </p>
+            <p>
+                <label for="price" class="label">Product price:</label>
+                <input type="number" name="price" id="price" [(ngModel)]="priceProduct" required>
+            </p>
+            <button type="submit" id="register-button">Register</button>
+        </div>
+
+        <nav>
+            <a routerLink="/list" id="list-button">List</a>
+        </nav>
+    </form>
+</body>

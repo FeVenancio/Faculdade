@@ -1,0 +1,18 @@
+<form (ngSubmit)="adicionarTarefas()">
+  <h1>Cadastrar Tarefa</h1>
+
+  <label for="titulo">Título:</label>
+  <input type="text" id="titulo" name="titulo" [(ngModel)]="titulo" required>
+
+  <label for="descricao">Descrição:</label>
+  <textarea id="descricao" name="descricao" [(ngModel)]="descricao" required></textarea>
+
+  <label for="prazoConclusao">Prazo de conclusão:</label>
+  <input type="date" id="prazoConclusao" name="prazoConclusao" [(ngModel)]="prazoConclusao" required>
+
+  <button type="submit">Cadastrar</button>
+</form>
+
+<p>
+  <a routerLink="/lista">Ver lista de tarefas</a>
+</p>

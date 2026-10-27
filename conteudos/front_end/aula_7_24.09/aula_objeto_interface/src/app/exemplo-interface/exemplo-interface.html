@@ -1,0 +1,11 @@
+@for (p of post; track p.id) {
+    <div>
+        <h4>{{ p.titulo }}</h4>
+        <small>
+        por {{ p.autor }} em {{ p.data }}
+        </small>
+        <p>{{ p.conteudo }}</p>
+    </div>
+} @empty {
+    <p>Nenhum post encontrado</p>
+}

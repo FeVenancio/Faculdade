@@ -1,0 +1,12 @@
+@for(i of inscricao(); track $index) {
+
+    <p>Nome: {{ i.nome }}</p>
+    <p>Email: {{ i.email }}</p>
+    <p>Oficina: {{ i.oficina }}</p>
+
+    <button (click)="confirmarInscricao(i)"> {{ i.confirmacao ? 'Inscrição confirmada' : 'Confirmar Inscrição' }}</button>
+    <button (click)="remover(i)">Remover</button>
+}
+
+
+<a routerLink="/cadastro">Cadastro</a>
